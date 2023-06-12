@@ -1,0 +1,30 @@
+.input{
+    width: 80%;
+    display: flex;
+    padding: 5% 3%;
+    border: 2px solid rgb(180, 180, 181);
+    justify-content: space-evenly;
+}
+
+.container{
+    max-width: 100vw;
+    padding: 10% 20%;
+}
+
+/* .functional-c{
+    padding: 70%;
+} */
+
+input{
+    width: 80%;
+}
+
+.add{
+    width: 30%;
+}
+
+p{
+    width: 100%;
+    background-color: aqua;
+    font-weight: 600;
+}

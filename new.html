@@ -7,14 +7,20 @@
     <link rel="stylesheet" href="todo.css">
 </head>
 <body>
-    <div class= "container">
-    <div class="fuctional-c">
-    <div class="input">
-        <input type="text" placeholder="Add an item to todo list">
-        <button class="add" onclick="addnewtodo()">Add</button>
+    <div class="container">
+        <div class="todo-app">
+            <h2>To-Do List</h2>
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Add Items to list">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <ul id="list-container">
+                <!-- <li class="checked">Task 1</li>
+                <li>Task 1</li>
+                <li>Task 1</li> -->
+            </ul>
+        </div>
     </div>
-</div>
-</div>
 <script src="todo.js"></script>
 </body>
 </html>

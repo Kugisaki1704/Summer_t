@@ -1,13 +1,46 @@
-let inputTag=document.getElementsByTagName("input")[0];
-let todo = document.getElementsByClassName("list")[0];
+const inputBox=document.getElementById('input-box');
+const listContainer=document.getElementById('list-container');
 
-function addnewtodo(){
-    if(inputTag.value.length<1)
+function addTask(){
+    if(inputBox.value === '')
     {
-        return;
+        alert("You must write something!");
+    }
+    else{
+        let li = document.createElement("li");
+        li.innerHTML = inputBox.value;
+        listContainer.appendChild(li);
+        let span=document.createElement('span');
+        span.innerHTML = "\u00d7";
+        li.appendChild(span);
     }
 
-    let newTag = document.createElement("p");
-    newTag.textContent=inputTag.value;
-    todo.appendChild(newTag);
+    inputBox.value = '';
+    saveData();
 }
+
+
+listContainer.addEventListener("click" , function(e){
+    if(e.target.tagName === "LI")
+    {
+        e.target.classList.toggle("checked");
+        saveData();
+    }
+    else if(e.target.tagName === "SPAN")
+    {
+        e.target.parentElement.remove();
+        saveData();
+    }
+},false);
+
+
+function saveData()
+{
+    localStorage.setItem("data" , listContainer.innerHTML);
+
+}
+
+function showList(){
+    listContainer.innerHTML = localStorage.getItem("data");
+}
+showList();
